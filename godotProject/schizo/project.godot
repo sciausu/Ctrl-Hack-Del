@@ -14,6 +14,13 @@ config/name="Schizo"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
+[global_group]
+
+interactable="can press 'e' on"
+delusion="not real"
+npc=""
+stare=""
+
 [input]
 
 forward={

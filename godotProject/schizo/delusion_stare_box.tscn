@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cn7qoxkw85lo6"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_da7yd"]
+albedo_color = Color(1, 0, 0.384314, 1)
+
+[node name="delusionStareBox" type="Node3D"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." groups=["stare"]]
+use_collision = true
+material = SubResource("StandardMaterial3D_da7yd")

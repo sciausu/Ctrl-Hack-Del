@@ -2,8 +2,10 @@ extends CharacterBody3D
 
 @onready var head = $head
 @onready var camera = $head/Camera3D
-@onready var use = $head/use # interact button
-@onready var delusionStare = $head/delusionStare
+@onready var use = $head/Camera3D/use # interact button
+@onready var delusionStare = $head/Camera3D/delusionStare
+
+
 
 static var delusionMeter = 0 # will increase when staring or interacting with delusions
 static var week = 1 # updates the events that appear in the map
@@ -29,8 +31,28 @@ func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-
 	
+	# interacting with objects
+	if Input.is_action_just_pressed("interact"):
+		# interactable obj
+		if use.is_colliding() and use.get_collider().is_in_group("interactable"):
+			print("interacting") # testing
+			var intObj = use.get_collider()
+			if intObj.is_in_group("npc"):
+				print("npc")
+		
+		if use.is_colliding() and use.get_collider().is_in_group("delusion"):
+			print("delusion interact")
+		
+		#end of interacting
+
+	# staring either at normal things or delusions
+	# note: there will be a cool down for staring so delusion meter doesnt get maxed in 1s
+	if delusionStare.is_colliding() and delusionStare.get_collider().is_in_group("stare"):
+		print("staring")
+
+
+	# stop movement and mouse movement
 	if Input.is_action_just_pressed("escape") and !cursor:
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		cursor = true
