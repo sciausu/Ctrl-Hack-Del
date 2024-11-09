@@ -23,3 +23,8 @@ shape = SubResource("ConvexPolygonShape3D_ncuy6")
 
 [node name="Camera3D" type="Camera3D" parent="CharacterBody3D/head"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.711579, 0)
+
+[node name="use" type="RayCast3D" parent="CharacterBody3D/head"]
+transform = Transform3D(1.2, 0, 0, 0, -5.24537e-08, -1.2, 0, 1.2, -5.24537e-08, 0, 0.649381, 0)
+
+[node name="delusionStare" type="RayCast3D" parent="CharacterBody3D/head"]

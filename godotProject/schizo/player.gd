@@ -2,12 +2,17 @@ extends CharacterBody3D
 
 @onready var head = $head
 @onready var camera = $head/Camera3D
+@onready var use = $head/use # interact button
+@onready var delusionStare = $head/delusionStare
+
+static var delusionMeter = 0 # will increase when staring or interacting with delusions
+static var week = 1 # updates the events that appear in the map
 
 var mouseSens = 0.02
 var cursor = false
 
 const SPEED = 5.0
-const JUMP_VELOCITY = 4.5
+
 
 
 func _ready():
@@ -39,11 +44,18 @@ func _physics_process(delta: float) -> void:
 	
 	var direction = (head.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	
-	if direction and !cursor: # dissables movement if mouse cursor is on
-		velocity.x = direction.x * SPEED
-		velocity.z = direction.z * SPEED
+	if is_on_floor():
+		velocity = velocity.lerp(direction * (SPEED-0), (SPEED*3.4) * delta)
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		velocity.z = move_toward(velocity.z, 0, SPEED)
+		velocity = velocity.lerp(direction * SPEED, (SPEED-3) * delta)
+	
+	#if direction and !cursor: # dissables movement if mouse cursor is on
+		#velocity.x = direction.x * SPEED
+		#velocity.z = direction.z * SPEED
+	#else:
+		#velocity.x = move_toward(velocity.x, 0, SPEED)
+		#velocity.z = move_toward(velocity.z, 0, SPEED)
+		
+	
 
 	move_and_slide()
