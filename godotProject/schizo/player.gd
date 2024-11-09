@@ -4,6 +4,7 @@ extends CharacterBody3D
 @onready var camera = $head/Camera3D
 
 var mouseSens = 0.02
+var cursor = false
 
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
@@ -14,7 +15,7 @@ func _ready():
 
 func _unhandled_input(event):
 	
-	if event is InputEventMouseMotion:
+	if event is InputEventMouseMotion and !cursor:
 		head.rotate_y(-event.relative.x * (mouseSens/4))
 		camera.rotate_x(-event.relative.y * (mouseSens/4))
 		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-90), deg_to_rad(90))
@@ -24,16 +25,21 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
-	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+	
+	if Input.is_action_just_pressed("escape") and !cursor:
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		cursor = true
+	elif Input.is_action_just_pressed("escape") and cursor:
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+		cursor = false
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir := Input.get_vector("left", "right", "forward", "backward")
+	
 	var direction = (head.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	
-	if direction:
+	if direction and !cursor: # dissables movement if mouse cursor is on
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
 	else:
