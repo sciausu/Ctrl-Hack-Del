@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bralmqjej55fk"
-path.s3tc="res://.godot/imported/bread.png-d8b3a889ac3669f63b6a68bcea33f2c6.s3tc.ctex"
+uid="uid://6l108rom6tyv"
+path.s3tc="res://.godot/imported/Milk.png-67032f0fb806b66b23e2e04502611086.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://bread.png"
-dest_files=["res://.godot/imported/bread.png-d8b3a889ac3669f63b6a68bcea33f2c6.s3tc.ctex"]
+source_file="res://Milk.png"
+dest_files=["res://.godot/imported/Milk.png-67032f0fb806b66b23e2e04502611086.s3tc.ctex"]
 
 [params]
 

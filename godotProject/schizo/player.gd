@@ -115,6 +115,8 @@ func _physics_process(delta: float) -> void:
 					print (lotto_collected)
 				if intObj.is_in_group("eggs"):
 					eggs_collected = true
+				if intObj.is_in_group("bread"):
+					bread_collected = true
 		
 		if use.is_colliding() and use.get_collider().is_in_group("delusion"):
 			print("delusion interact")
@@ -144,7 +146,7 @@ func _physics_process(delta: float) -> void:
 				w1s.visible = true
 			print(week1)
 		if week == 2:
-			w2e.visible = true
+			w2em.visible = true
 			# bread, water, eggs
 			if bread_collected and water_collected and eggs_collected:
 				w2b.visible = false
@@ -154,6 +156,7 @@ func _physics_process(delta: float) -> void:
 				w2em.visible = false
 				w2w.visible = false
 				w2we.visible = false
+				w2be.visible = false
 			elif !bread_collected and water_collected and eggs_collected:
 				w2b.visible = false
 				w2bw.visible = false
@@ -162,6 +165,7 @@ func _physics_process(delta: float) -> void:
 				w2em.visible = false
 				w2w.visible = false
 				w2we.visible = true
+				w2be.visible = false
 			elif bread_collected and !water_collected and eggs_collected:
 				w2b.visible = false
 				w2bw.visible = false

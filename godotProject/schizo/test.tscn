@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://db21ja8wsqd75"]
+[gd_scene load_steps=16 format=3 uid="uid://db21ja8wsqd75"]
 
 [ext_resource type="PackedScene" uid="uid://c7m1a1sad1r68" path="res://player.tscn" id="1_yn1ux"]
 [ext_resource type="PackedScene" uid="uid://c5hdcsdo34x7y" path="res://interact_box.tscn" id="2_ip4cy"]
@@ -8,6 +8,10 @@
 [ext_resource type="PackedScene" uid="uid://fvuctjle5j51" path="res://choco_bar.tscn" id="6_hiqjx"]
 [ext_resource type="PackedScene" uid="uid://col5hay716na" path="res://soda.tscn" id="7_r41bl"]
 [ext_resource type="PackedScene" uid="uid://dt1kmv4c1nn6t" path="res://chips.tscn" id="8_eayd7"]
+[ext_resource type="PackedScene" uid="uid://ns7vlp0edtja" path="res://eggs.tscn" id="9_7vofu"]
+[ext_resource type="PackedScene" uid="uid://jvcegevx6epv" path="res://bread.tscn" id="10_7fqwn"]
+[ext_resource type="PackedScene" uid="uid://3biv8ie2vvce" path="res://milk.tscn" id="11_upaqu"]
+[ext_resource type="PackedScene" uid="uid://xf4pmt48vtmr" path="res://water.tscn" id="12_chcml"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_x3b1q"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -59,3 +63,15 @@ transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 2.09665, 0.874894, -2.2
 
 [node name="Chips" parent="." instance=ExtResource("8_eayd7")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 2.49844, 0.703622, -0.736471)
+
+[node name="eggs" parent="." instance=ExtResource("9_7vofu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.28603, 0.031199, 2.66692)
+
+[node name="bread" parent="." instance=ExtResource("10_7fqwn")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0.936458, 0.0356014, 5.04013)
+
+[node name="milk" parent="." instance=ExtResource("11_upaqu")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -3.06488, 0.051687, 4.71903)
+
+[node name="water" parent="." instance=ExtResource("12_chcml")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -0.163934, 0.207119, -4.18049)
