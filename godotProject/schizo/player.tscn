@@ -33,7 +33,6 @@ collide_with_areas = true
 transform = Transform3D(1, 0, 0, 0, -4.37114e-06, -1, 0, 100, -4.37114e-08, 0, -0.061771, 0)
 
 [node name="gList" type="Control" parent="."]
-visible = false
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
