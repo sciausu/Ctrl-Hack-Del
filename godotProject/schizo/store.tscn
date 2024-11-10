@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://r5waa8yqph1"]
+
+[ext_resource type="PackedScene" uid="uid://be1jx0bukfho5" path="res://Blender Models/uploads_files_4498769_convience_store.blend" id="1_1cf42"]
+
+[node name="store" type="Node3D"]
+
+[node name="uploads_files_4498769_convience_store" parent="." instance=ExtResource("1_1cf42")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.54649, 0, -2.49596)
