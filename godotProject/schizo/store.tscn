@@ -1,8 +1,81 @@
-[gd_scene load_steps=2 format=3 uid="uid://r5waa8yqph1"]
+[gd_scene load_steps=6 format=3 uid="uid://kmqs1iotqmua"]
 
 [ext_resource type="PackedScene" uid="uid://be1jx0bukfho5" path="res://Blender Models/uploads_files_4498769_convience_store.blend" id="1_1cf42"]
+[ext_resource type="PackedScene" uid="uid://c7m1a1sad1r68" path="res://player.tscn" id="2_f7ncm"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_d43q1"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_u183q"]
+sky_material = SubResource("ProceduralSkyMaterial_d43q1")
+
+[sub_resource type="Environment" id="Environment_c8412"]
+background_mode = 2
+sky = SubResource("Sky_u183q")
+tonemap_mode = 2
+glow_enabled = true
 
 [node name="store" type="Node3D"]
 
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_c8412")
+
 [node name="uploads_files_4498769_convience_store" parent="." instance=ExtResource("1_1cf42")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.54649, 0, -2.49596)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.704918, 0, -6.75906)
+
+[node name="player" parent="." instance=ExtResource("2_f7ncm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.95156, 0.651419, -9.34356)
+
+[node name="floor" type="CSGBox3D" parent="."]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, -0.341323, 0)
+use_collision = true
+size = Vector3(1, 0.001, 1)
+
+[node name="shelves" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.32938, 1.02865, -6.78883)
+visible = false
+use_collision = true
+size = Vector3(5.83838, 2.56519, 0.651367)
+
+[node name="shelves2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.32938, 1.02865, -2.49095)
+visible = false
+use_collision = true
+size = Vector3(5.83838, 2.56519, 0.651367)
+
+[node name="shelves3" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.1227, 1.02865, 0.870754)
+visible = false
+use_collision = true
+size = Vector3(18.9757, 2.56519, 0.54541)
+
+[node name="checkout" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.6418, 1.19209e-07, -9.49144)
+visible = false
+use_collision = true
+size = Vector3(8.43256, 1, 3.0957)
+
+[node name="wall" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.02975, 1.37494, -4.95825)
+visible = false
+use_collision = true
+size = Vector3(0.146118, 3.74988, 12.4185)
+
+[node name="wall2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.8887, 1.37494, -4.95825)
+visible = false
+use_collision = true
+size = Vector3(0.146118, 3.74988, 12.4185)
+
+[node name="wall3" type="CSGBox3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8.91712, 1.37494, 1.12778)
+visible = false
+use_collision = true
+size = Vector3(0.146118, 3.74988, 16.3138)
+
+[node name="wall4" type="CSGBox3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8.91712, 1.37494, -10.7586)
+visible = false
+use_collision = true
+size = Vector3(0.146118, 3.74988, 16.3138)
