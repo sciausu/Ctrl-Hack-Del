@@ -7,6 +7,23 @@ extends CharacterBody3D
 @onready var staring = $"../staring" # timer for staring to normalize amount
 
 @onready var gList = $"../gList"
+@onready var w1e = $"../gList/w1e"
+@onready var w1c = $"../gList/w1c"
+@onready var w1s = $"../gList/w1s"
+@onready var w1cs = $"../gList/w1cs"
+
+# Defines the images to toggle betweeen
+var images = []
+var current_image_index = 0
+
+@onready var chips_collected = false
+@onready var soda_collected = false
+@onready var choco_bar_collected = false
+@onready var candy_collected = false
+@onready var milk_collected = false
+@onready var water_collected = false
+@onready var lotto_collected = false
+@onready var bread_collected = false
 
 
 var week1 = false
@@ -50,6 +67,27 @@ func _physics_process(delta: float) -> void:
 				print("npc")
 			elif intObj.is_in_group("food"):
 				print("food")
+				if intObj.is_in_group("chips"):
+					chips_collected = true
+					print (chips_collected)
+				if intObj.is_in_group("soda"):
+					soda_collected = true
+					print (soda_collected)
+				if intObj.is_in_group("choco_bar"):
+					choco_bar_collected = true
+					print (choco_bar_collected)
+				if intObj.is_in_group("candy"):
+					candy_collected = true
+					print (candy_collected)
+				if intObj.is_in_group("milk"):
+					milk_collected = true
+					print (milk_collected)
+				if intObj.is_in_group("water"):
+					water_collected = true
+					print (water_collected)
+				if intObj.is_in_group("lotto"):
+					lotto_collected = true
+					print (lotto_collected)
 		
 		if use.is_colliding() and use.get_collider().is_in_group("delusion"):
 			print("delusion interact")
@@ -83,8 +121,11 @@ func _physics_process(delta: float) -> void:
 		#velocity.z = move_toward(velocity.z, 0, SPEED)
 		
 	
-
+	
+	
 	move_and_slide()
+
+
 
 
 	

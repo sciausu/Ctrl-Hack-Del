@@ -1,7 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://c7m1a1sad1r68"]
+[gd_scene load_steps=8 format=3 uid="uid://jx5m25sin6g0"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_tgly5"]
 [ext_resource type="Texture2D" uid="uid://c1yadny35xweu" path="res://week1_empty.png" id="2_ibqqf"]
+[ext_resource type="Texture2D" uid="uid://vdg1i4iiltct" path="res://week1_chips.png" id="3_ovbpy"]
+[ext_resource type="Texture2D" uid="uid://db5cnh58atfmc" path="res://week1_chips_soda.png" id="4_qlpjc"]
+[ext_resource type="Texture2D" uid="uid://dfyi4cpfo2eoc" path="res://week1_soda.png" id="5_rtsb6"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_0kebj"]
 
@@ -33,7 +36,6 @@ collide_with_areas = true
 transform = Transform3D(1, 0, 0, 0, -4.37114e-06, -1, 0, 100, -4.37114e-08, 0, -0.061771, 0)
 
 [node name="gList" type="Control" parent="."]
-visible = false
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -48,7 +50,6 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="w1e" type="TextureRect" parent="gList"]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -77,6 +78,7 @@ offset_right = 20.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("3_ovbpy")
 
 [node name="w1s" type="TextureRect" parent="gList"]
 visible = false
@@ -92,6 +94,7 @@ offset_right = 20.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("4_qlpjc")
 
 [node name="w1cs" type="TextureRect" parent="gList"]
 visible = false
@@ -107,3 +110,4 @@ offset_right = 20.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("5_rtsb6")
