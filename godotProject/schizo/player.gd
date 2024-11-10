@@ -40,6 +40,8 @@ func _physics_process(delta: float) -> void:
 			var intObj = use.get_collider()
 			if intObj.is_in_group("npc"):
 				print("npc")
+			elif intObj.is_in_group("food"):
+				print("food")
 		
 		if use.is_colliding() and use.get_collider().is_in_group("delusion"):
 			print("delusion interact")
@@ -49,11 +51,6 @@ func _physics_process(delta: float) -> void:
 
 	# staring either at normal things or delusions
 	# note: there will be a cool down for staring so delusion meter doesnt get maxed in 1s
-	if delusionStare.is_colliding() and delusionStare.get_collider().is_in_group("stare"):
-		staring.start()
-		
-		#if staring.is_stopped():
-			#staring.wait_time = 2
 
 
 	# stop movement and mouse movement
@@ -87,6 +84,4 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 
-func _on_staring_timeout() -> void:
-	print(staring.time_left)
-	staring.start() # Replace with function body.
+	
