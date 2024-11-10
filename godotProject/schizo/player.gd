@@ -4,7 +4,7 @@ extends CharacterBody3D
 @onready var camera = $head/Camera3D
 @onready var use = $head/Camera3D/use # interact button
 @onready var delusionStare = $head/Camera3D/delusionStare
-
+@onready var staring = $"../staring" # timer for staring to normalize amount
 
 
 static var delusionMeter = 0 # will increase when staring or interacting with delusions
@@ -46,10 +46,14 @@ func _physics_process(delta: float) -> void:
 		
 		#end of interacting
 
+
 	# staring either at normal things or delusions
 	# note: there will be a cool down for staring so delusion meter doesnt get maxed in 1s
 	if delusionStare.is_colliding() and delusionStare.get_collider().is_in_group("stare"):
-		print("staring")
+		staring.start()
+		
+		#if staring.is_stopped():
+			#staring.wait_time = 2
 
 
 	# stop movement and mouse movement
@@ -81,3 +85,8 @@ func _physics_process(delta: float) -> void:
 	
 
 	move_and_slide()
+
+
+func _on_staring_timeout() -> void:
+	print(staring.time_left)
+	staring.start() # Replace with function body.
