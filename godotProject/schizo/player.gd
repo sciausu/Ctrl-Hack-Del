@@ -6,6 +6,14 @@ extends CharacterBody3D
 @onready var delusionStare = $head/Camera3D/delusionStare
 @onready var staring = $"../staring" # timer for staring to normalize amount
 
+@onready var gList = $"../gList"
+
+
+var week1 = false
+var week2 = false
+var week3 = false
+var week4 = false
+
 
 static var delusionMeter = 0 # will increase when staring or interacting with delusions
 static var week = 1 # updates the events that appear in the map
@@ -47,11 +55,6 @@ func _physics_process(delta: float) -> void:
 			print("delusion interact")
 		
 		#end of interacting
-
-
-	# staring either at normal things or delusions
-	# note: there will be a cool down for staring so delusion meter doesnt get maxed in 1s
-
 
 	# stop movement and mouse movement
 	if Input.is_action_just_pressed("escape") and !cursor:
