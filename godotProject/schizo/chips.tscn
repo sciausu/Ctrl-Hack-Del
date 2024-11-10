@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://c03f0cer0ae6m"]
+
+[node name="Chips" type="Node3D"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." groups=["foodItem", "interactable"]]
+use_collision = true
