@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://kmqs1iotqmua"]
+[gd_scene load_steps=7 format=3 uid="uid://kmqs1iotqmua"]
 
 [ext_resource type="PackedScene" uid="uid://be1jx0bukfho5" path="res://Blender Models/uploads_files_4498769_convience_store.blend" id="1_1cf42"]
 [ext_resource type="PackedScene" uid="uid://c7m1a1sad1r68" path="res://player.tscn" id="2_f7ncm"]
+[ext_resource type="PackedScene" uid="uid://8vxedqcmt61l" path="res://npc_1.tscn" id="3_r8ugs"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_d43q1"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -79,3 +80,6 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8.9171
 visible = false
 use_collision = true
 size = Vector3(0.146118, 3.74988, 16.3138)
+
+[node name="npc1" parent="." instance=ExtResource("3_r8ugs")]
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 13.0952, 0.907244, -1.04679)
