@@ -1,10 +1,10 @@
 [gd_scene load_steps=9 format=3 uid="uid://db21ja8wsqd75"]
 
-[ext_resource type="PackedScene" uid="uid://c7m1a1sad1r68" path="res://player.tscn" id="1_yn1ux"]
-[ext_resource type="PackedScene" uid="uid://c5hdcsdo34x7y" path="res://interact_box.tscn" id="2_ip4cy"]
-[ext_resource type="PackedScene" uid="uid://brbyau2uixrcb" path="res://delusion_box.tscn" id="3_v5l57"]
-[ext_resource type="PackedScene" uid="uid://c16p2ldunwcyw" path="res://interact_npc_box.tscn" id="4_jg8ha"]
-[ext_resource type="PackedScene" uid="uid://cn7qoxkw85lo6" path="res://delusion_stare_box.tscn" id="5_carcq"]
+[ext_resource type="PackedScene" uid="uid://jx5m25sin6g0" path="res://player.tscn" id="1_yn1ux"]
+[ext_resource type="PackedScene" path="res://interact_box.tscn" id="2_ip4cy"]
+[ext_resource type="PackedScene" path="res://delusion_box.tscn" id="3_v5l57"]
+[ext_resource type="PackedScene" path="res://interact_npc_box.tscn" id="4_jg8ha"]
+[ext_resource type="PackedScene" path="res://delusion_stare_box.tscn" id="5_carcq"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_x3b1q"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
