@@ -88,6 +88,19 @@ func _physics_process(delta: float) -> void:
 		if use.is_colliding() and use.get_collider().is_in_group("interactable"):
 			print("interacting") # testing
 			var intObj = use.get_collider()
+			if intObj.is_in_group("checkout"):
+				if week == 1 and soda_collected and chips_collected:
+					week+=1
+					get_tree().reload_current_scene()
+				elif week == 2 and bread_collected and water_collected and eggs_collected:
+					week+=1
+					get_tree().reload_current_scene()
+				elif week == 3 and choco_bar_collected and milk_collected:
+					week+=1
+					get_tree().reload_current_scene()
+				elif week == 4 and chips_collected and water_collected:
+					print("end")
+				
 			if intObj.is_in_group("npc"):
 				print("npc")
 			elif intObj.is_in_group("foodItem"):

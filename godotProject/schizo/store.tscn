@@ -646,3 +646,9 @@ transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 8.51515, 0.379856, -7.2
 
 [node name="bread37" parent="." instance=ExtResource("11_wevpn")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 8.77676, 0.379856, -7.22229)
+
+[node name="checkoutBasket" type="CSGBox3D" parent="." groups=["checkout", "interactable"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.7041, 0.428474, -9.52836)
+visible = false
+use_collision = true
+size = Vector3(0.503845, 1.07617, 0.911926)
