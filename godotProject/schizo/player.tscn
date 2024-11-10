@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://c7m1a1sad1r68"]
+[gd_scene load_steps=26 format=3 uid="uid://c7m1a1sad1r68"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_tgly5"]
 [ext_resource type="Texture2D" uid="uid://c1yadny35xweu" path="res://week1_empty.png" id="2_ibqqf"]
@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://byyls13lfxgns" path="res://week4_water.png" id="19_8cda7"]
 [ext_resource type="Texture2D" uid="uid://byp5aq37dvaux" path="res://week4_water_chips.png" id="20_1prve"]
 [ext_resource type="PackedScene" uid="uid://dc28os4t76org" path="res://credits.tscn" id="22_qim0g"]
+[ext_resource type="Texture2D" uid="uid://becmck7ndrgaq" path="res://banana man.png" id="23_2ts4v"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_0kebj"]
 
@@ -389,3 +390,25 @@ texture = ExtResource("20_1prve")
 
 [node name="credits" parent="." instance=ExtResource("22_qim0g")]
 visible = false
+
+[node name="interactions" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="interactions"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("23_2ts4v")
+
+[node name="TextEdit" type="TextEdit" parent="interactions/TextureRect"]
+visible = false
+layout_mode = 0
+offset_left = 559.0
+offset_top = 1.0
+offset_right = 1081.0
+offset_bottom = 455.0
