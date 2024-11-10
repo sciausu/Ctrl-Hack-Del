@@ -1,9 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://8vxedqcmt61l"]
-
-[ext_resource type="Texture2D" uid="uid://cq6s5bhutnpq5" path="res://npc1.png" id="1_5mlcg"]
-
-[node name="npc1" type="Node3D"]
-
-[node name="Sprite3D" type="Sprite3D" parent="."]
-billboard = 2
-texture = ExtResource("1_5mlcg")
