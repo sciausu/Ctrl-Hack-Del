@@ -1,10 +1,26 @@
-[gd_scene load_steps=8 format=3 uid="uid://jx5m25sin6g0"]
+[gd_scene load_steps=24 format=3 uid="uid://c7m1a1sad1r68"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_tgly5"]
 [ext_resource type="Texture2D" uid="uid://c1yadny35xweu" path="res://week1_empty.png" id="2_ibqqf"]
 [ext_resource type="Texture2D" uid="uid://vdg1i4iiltct" path="res://week1_chips.png" id="3_ovbpy"]
 [ext_resource type="Texture2D" uid="uid://db5cnh58atfmc" path="res://week1_chips_soda.png" id="4_qlpjc"]
 [ext_resource type="Texture2D" uid="uid://dfyi4cpfo2eoc" path="res://week1_soda.png" id="5_rtsb6"]
+[ext_resource type="Texture2D" uid="uid://bsuj7mqwgt3cj" path="res://week2_bread.png" id="6_1hlqh"]
+[ext_resource type="Texture2D" uid="uid://do8xx3ph7n7jn" path="res://week2_bread_water.png" id="7_7wcx8"]
+[ext_resource type="Texture2D" uid="uid://dij76bn28djfx" path="res://week2_bread_water_eggs.png" id="8_0lniw"]
+[ext_resource type="Texture2D" uid="uid://cfctllehn45y5" path="res://week2_eggs.png" id="9_cp8oy"]
+[ext_resource type="Texture2D" uid="uid://dwh1pjvocgjtd" path="res://week2_empty.png" id="10_kj6tp"]
+[ext_resource type="Texture2D" uid="uid://dtr6nysngydh0" path="res://week2_water.png" id="11_bdfd1"]
+[ext_resource type="Texture2D" uid="uid://c3barwp4tl1xo" path="res://week2_water_eggs.png" id="12_2vuf4"]
+[ext_resource type="Texture2D" uid="uid://cvvyrerhd0nvt" path="res://week3_choco.png" id="13_8lbll"]
+[ext_resource type="Texture2D" uid="uid://b3iae1b8c3faj" path="res://week2_bread_eggs.png" id="13_d0uox"]
+[ext_resource type="Texture2D" uid="uid://803qdstfx3oe" path="res://week3_choco_milk.png" id="14_otqll"]
+[ext_resource type="Texture2D" uid="uid://b15k4usuya0kt" path="res://week3_empty.png" id="15_b1qxv"]
+[ext_resource type="Texture2D" uid="uid://dsclv1jwb3mtk" path="res://week3_milk.png" id="16_nw2ed"]
+[ext_resource type="Texture2D" uid="uid://d10gree8m0ilv" path="res://week4_chips.png" id="17_0n0ms"]
+[ext_resource type="Texture2D" uid="uid://b6le03jgmlwya" path="res://week4_empty.png" id="18_gahiv"]
+[ext_resource type="Texture2D" uid="uid://byyls13lfxgns" path="res://week4_water.png" id="19_8cda7"]
+[ext_resource type="Texture2D" uid="uid://byp5aq37dvaux" path="res://week4_water_chips.png" id="20_1prve"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_0kebj"]
 
@@ -36,6 +52,7 @@ collide_with_areas = true
 transform = Transform3D(1, 0, 0, 0, -4.37114e-06, -1, 0, 100, -4.37114e-08, 0, -0.061771, 0)
 
 [node name="gList" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -50,6 +67,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="w1e" type="TextureRect" parent="gList"]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -94,7 +112,7 @@ offset_right = 20.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("4_qlpjc")
+texture = ExtResource("5_rtsb6")
 
 [node name="w1cs" type="TextureRect" parent="gList"]
 visible = false
@@ -110,4 +128,260 @@ offset_right = 20.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("5_rtsb6")
+texture = ExtResource("4_qlpjc")
+
+[node name="w2b" type="TextureRect" parent="gList"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_1hlqh")
+
+[node name="w2bw" type="TextureRect" parent="gList"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_7wcx8")
+
+[node name="w2bwe" type="TextureRect" parent="gList"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_0lniw")
+
+[node name="w2e" type="TextureRect" parent="gList"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_cp8oy")
+
+[node name="w2em" type="TextureRect" parent="gList"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_kj6tp")
+
+[node name="w2w" type="TextureRect" parent="gList"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_bdfd1")
+
+[node name="w2we" type="TextureRect" parent="gList"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("12_2vuf4")
+
+[node name="w2be" type="TextureRect" parent="gList"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("13_d0uox")
+
+[node name="w3c" type="TextureRect" parent="gList"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("13_8lbll")
+
+[node name="w3cm" type="TextureRect" parent="gList"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_otqll")
+
+[node name="w3e" type="TextureRect" parent="gList"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("15_b1qxv")
+
+[node name="w3m" type="TextureRect" parent="gList"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("16_nw2ed")
+
+[node name="w4c" type="TextureRect" parent="gList"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("17_0n0ms")
+
+[node name="w4e" type="TextureRect" parent="gList"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("18_gahiv")
+
+[node name="w4w" type="TextureRect" parent="gList"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("19_8cda7")
+
+[node name="w4wc" type="TextureRect" parent="gList"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("20_1prve")
