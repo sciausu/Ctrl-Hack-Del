@@ -12,6 +12,26 @@ extends CharacterBody3D
 @onready var w1s = $"../gList/w1s"
 @onready var w1cs = $"../gList/w1cs"
 
+@onready var w2b = $"../gList/w2b"
+@onready var w2bw = $"../gList/w2bw"
+@onready var w2bwe = $"../gList/w2bwe"
+@onready var w2e = $"../gList/w2e"
+@onready var w2em = $"../gList/w2em"
+@onready var w2w = $"../gList/w2w"
+@onready var w2we = $"../gList/w2we"
+@onready var w2be = $"../gList/w2be"
+
+@onready var w3c = $"../gList/w3c"
+@onready var w3cm = $"../gList/w3cm"
+@onready var w3e = $"../gList/w3e"
+@onready var w3m = $"../gList/w3m"
+
+@onready var w4c = $"../gList/w4c"
+@onready var w4e = $"../gList/w4e"
+@onready var w4w = $"../gList/w4w"
+@onready var w4wc = $"../gList/w4wc"
+
+
 # Defines the images to toggle betweeen
 var images = []
 var current_image_index = 0
@@ -24,6 +44,7 @@ var current_image_index = 0
 @onready var water_collected = false
 @onready var lotto_collected = false
 @onready var bread_collected = false
+@onready var eggs_collected = false
 
 
 var week1 = false
@@ -56,6 +77,10 @@ func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
+		
+	
+	
+	
 	
 	# interacting with objects
 	if Input.is_action_just_pressed("interact"):
@@ -65,14 +90,14 @@ func _physics_process(delta: float) -> void:
 			var intObj = use.get_collider()
 			if intObj.is_in_group("npc"):
 				print("npc")
-			elif intObj.is_in_group("food"):
+			elif intObj.is_in_group("foodItem"):
 				print("food")
 				if intObj.is_in_group("chips"):
 					chips_collected = true
-					print (chips_collected)
+					print (chips_collected,"chips")
 				if intObj.is_in_group("soda"):
 					soda_collected = true
-					print (soda_collected)
+					print (soda_collected, "soda")
 				if intObj.is_in_group("choco_bar"):
 					choco_bar_collected = true
 					print (choco_bar_collected)
@@ -88,11 +113,144 @@ func _physics_process(delta: float) -> void:
 				if intObj.is_in_group("lotto"):
 					lotto_collected = true
 					print (lotto_collected)
+				if intObj.is_in_group("eggs"):
+					eggs_collected = true
 		
 		if use.is_colliding() and use.get_collider().is_in_group("delusion"):
 			print("delusion interact")
 		
 		#end of interacting
+
+# checking list
+	if Input.is_action_just_pressed("groceryList") and !gList.visible:
+		gList.visible = true
+		if week == 1:
+			w1e.visible = true
+			# chips and soda
+			if chips_collected and soda_collected:
+				w1cs.visible = true
+				w1c.visible = false
+				w1e.visible = false
+				w1s.visible = false
+			elif chips_collected and !soda_collected:
+				w1cs.visible = false
+				w1c.visible = true
+				w1e.visible = false
+				w1s.visible = false
+			elif !chips_collected and soda_collected:
+				w1cs.visible = false
+				w1c.visible = false
+				w1e.visible = false
+				w1s.visible = true
+			print(week1)
+		if week == 2:
+			w2e.visible = true
+			# bread, water, eggs
+			if bread_collected and water_collected and eggs_collected:
+				w2b.visible = false
+				w2bw.visible = false
+				w2bwe.visible = true
+				w2e.visible = false
+				w2em.visible = false
+				w2w.visible = false
+				w2we.visible = false
+			elif !bread_collected and water_collected and eggs_collected:
+				w2b.visible = false
+				w2bw.visible = false
+				w2bwe.visible = false
+				w2e.visible = false
+				w2em.visible = false
+				w2w.visible = false
+				w2we.visible = true
+			elif bread_collected and !water_collected and eggs_collected:
+				w2b.visible = false
+				w2bw.visible = false
+				w2bwe.visible = false
+				w2e.visible = false
+				w2em.visible = false
+				w2w.visible = false
+				w2we.visible = false
+				w2be.visible = true
+			elif bread_collected and water_collected and !eggs_collected:
+				w2b.visible = false
+				w2bw.visible = true
+				w2bwe.visible = false
+				w2e.visible = false
+				w2em.visible = false
+				w2w.visible = false
+				w2we.visible = false
+				w2be.visible = false
+			elif !bread_collected and !water_collected and eggs_collected:
+				w2b.visible = false
+				w2bw.visible = false
+				w2bwe.visible = false
+				w2e.visible = true
+				w2em.visible = false
+				w2w.visible = false
+				w2we.visible = false
+				w2be.visible = false
+			elif bread_collected and !water_collected and !eggs_collected:
+				w2b.visible = true
+				w2bw.visible = false
+				w2bwe.visible = false
+				w2e.visible = false
+				w2em.visible = false
+				w2w.visible = false
+				w2we.visible = false
+				w2be.visible = false
+			elif !bread_collected and water_collected and !eggs_collected:
+				w2b.visible = false
+				w2bw.visible = false
+				w2bwe.visible = false
+				w2e.visible = false
+				w2em.visible = false
+				w2w.visible = true
+				w2we.visible = false
+				w2be.visible = false
+				
+			print(week2)
+		if week == 3:
+			w3e.visible = true
+			if choco_bar_collected and milk_collected:
+				w3e.visible = false
+				w3c.visible = false
+				w3m.visible = false
+				w3cm.visible = true
+			elif !choco_bar_collected and milk_collected:
+				w3e.visible = false
+				w3c.visible = false
+				w3m.visible = true
+				w3cm.visible = false
+			elif choco_bar_collected and !milk_collected:
+				w3e.visible = false
+				w3c.visible = true
+				w3m.visible = false
+				w3cm.visible = false
+			
+			print(week3)
+		if week == 4:
+			w4e.visible = true
+			if water_collected and chips_collected:
+				w4e.visible = false
+				w4w.visible = false
+				w4c.visible = false
+				w4wc.visible = true
+			elif !water_collected and chips_collected:
+				w4e.visible = false
+				w4w.visible = false
+				w4c.visible = true
+				w4wc.visible = false
+			elif water_collected and !chips_collected:
+				w4e.visible = false
+				w4w.visible = true
+				w4c.visible = false
+				w4wc.visible = false
+			print(week4)
+		
+	elif Input.is_action_just_pressed("groceryList") and gList.visible:
+		gList.visible = false
+
+
 
 	# stop movement and mouse movement
 	if Input.is_action_just_pressed("escape") and !cursor:

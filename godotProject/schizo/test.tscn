@@ -1,10 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://db21ja8wsqd75"]
+[gd_scene load_steps=12 format=3 uid="uid://db21ja8wsqd75"]
 
 [ext_resource type="PackedScene" uid="uid://c7m1a1sad1r68" path="res://player.tscn" id="1_yn1ux"]
 [ext_resource type="PackedScene" uid="uid://c5hdcsdo34x7y" path="res://interact_box.tscn" id="2_ip4cy"]
 [ext_resource type="PackedScene" uid="uid://brbyau2uixrcb" path="res://delusion_box.tscn" id="3_v5l57"]
 [ext_resource type="PackedScene" uid="uid://c16p2ldunwcyw" path="res://interact_npc_box.tscn" id="4_jg8ha"]
 [ext_resource type="PackedScene" uid="uid://cn7qoxkw85lo6" path="res://delusion_stare_box.tscn" id="5_carcq"]
+[ext_resource type="PackedScene" uid="uid://fvuctjle5j51" path="res://choco_bar.tscn" id="6_hiqjx"]
+[ext_resource type="PackedScene" uid="uid://col5hay716na" path="res://soda.tscn" id="7_r41bl"]
+[ext_resource type="PackedScene" uid="uid://dt1kmv4c1nn6t" path="res://chips.tscn" id="8_eayd7"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_x3b1q"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -47,3 +50,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.99385, 0.117983, -2.42496)
 
 [node name="delusionStareBox" parent="." instance=ExtResource("5_carcq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.46875, 0.111364, 0.922221)
+
+[node name="chocoBar" parent="." instance=ExtResource("6_hiqjx")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 1.82174, 1.07251, 0.814785)
+
+[node name="soda" parent="." instance=ExtResource("7_r41bl")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 2.09665, 0.874894, -2.25253)
+
+[node name="Chips" parent="." instance=ExtResource("8_eayd7")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 2.49844, 0.703622, -0.736471)
