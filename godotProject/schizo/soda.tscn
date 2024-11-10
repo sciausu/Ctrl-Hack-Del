@@ -1,5 +1,13 @@
-[gd_scene format=3 uid="uid://cg6n3hfs8oyyx"]
+[gd_scene load_steps=2 format=3 uid="uid://col5hay716na"]
+
+[ext_resource type="Texture2D" uid="uid://yw0ka7vc6mve" path="res://soda.png" id="1_cq72a"]
 
 [node name="soda" type="Node3D"]
 
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="." groups=["foodItem", "interactable"]]
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="." groups=["foodItem", "interactable", "soda"]]
+visible = false
+use_collision = true
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+billboard = 2
+texture = ExtResource("1_cq72a")
