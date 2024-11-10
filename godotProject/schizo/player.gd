@@ -31,6 +31,8 @@ extends CharacterBody3D
 @onready var w4w = $"../gList/w4w"
 @onready var w4wc = $"../gList/w4wc"
 
+@onready var credits = $"../credits"
+
 
 # Defines the images to toggle betweeen
 var images = []
@@ -54,7 +56,7 @@ var week4 = false
 
 
 static var delusionMeter = 0 # will increase when staring or interacting with delusions
-static var week = 1 # updates the events that appear in the map
+static var week = 4 # updates the events that appear in the map
 
 var mouseSens = 0.02
 var cursor = false
@@ -100,6 +102,8 @@ func _physics_process(delta: float) -> void:
 					get_tree().reload_current_scene()
 				elif week == 4 and chips_collected and water_collected:
 					print("end")
+					credits.visible = true
+					
 				
 			if intObj.is_in_group("npc"):
 				print("npc")

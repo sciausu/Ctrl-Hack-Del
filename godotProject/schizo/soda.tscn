@@ -7,6 +7,8 @@
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="." groups=["foodItem", "interactable", "soda"]]
 visible = false
 use_collision = true
+radius = 1.101
+height = 2.281
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 billboard = 2

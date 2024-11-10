@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://c7m1a1sad1r68"]
+[gd_scene load_steps=25 format=3 uid="uid://c7m1a1sad1r68"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_tgly5"]
 [ext_resource type="Texture2D" uid="uid://c1yadny35xweu" path="res://week1_empty.png" id="2_ibqqf"]
@@ -21,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://b6le03jgmlwya" path="res://week4_empty.png" id="18_gahiv"]
 [ext_resource type="Texture2D" uid="uid://byyls13lfxgns" path="res://week4_water.png" id="19_8cda7"]
 [ext_resource type="Texture2D" uid="uid://byp5aq37dvaux" path="res://week4_water_chips.png" id="20_1prve"]
+[ext_resource type="PackedScene" uid="uid://dc28os4t76org" path="res://credits.tscn" id="22_qim0g"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_0kebj"]
 
@@ -385,3 +386,6 @@ offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("20_1prve")
+
+[node name="credits" parent="." instance=ExtResource("22_qim0g")]
+visible = false
