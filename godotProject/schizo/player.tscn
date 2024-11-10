@@ -25,13 +25,8 @@ shape = SubResource("ConvexPolygonShape3D_ncuy6")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.711579, 0)
 
 [node name="use" type="RayCast3D" parent="CharacterBody3D/head/Camera3D"]
-transform = Transform3D(1, 0, 0, 0, -6.55671e-08, -1, 0, 1.5, -4.37114e-08, 0, -0.0615795, 0)
+transform = Transform3D(1, 0, 0, 0, -8.74228e-08, -1, 0, 2, -4.37114e-08, 0, -0.0615795, 0)
 collide_with_areas = true
 
 [node name="delusionStare" type="RayCast3D" parent="CharacterBody3D/head/Camera3D"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-06, -1, 0, 100, -4.37114e-08, 0, -0.061771, 0)
-
-[node name="staring" type="Timer" parent="."]
-wait_time = 0.3
-
-[connection signal="timeout" from="staring" to="CharacterBody3D" method="_on_staring_timeout"]
